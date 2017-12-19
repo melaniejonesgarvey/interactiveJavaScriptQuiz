@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<!--
+	       Author: Melanie Garvey
+	       Date: 10/20/16
+	       Project Name: Interactive JavaScript Quiz
+	       Project Criteria: 
+	       	Quiz should be about JS.
+	       	Include centered outerwrapper div at less than 100%.
+			Validate HTML & CSS.
+			All measurements should be flexible.
+			Include meta viewport tag.
+			Include two media queries.
+			CSS and JS files should be stored in separate external files.
+			Files should be properly documented with name and date.
+			Quiz should include the following JS elements:
+				document.write()
+					text
+					variable value
+					html tags
+				document.getElementById(' ').innerHTML
+				document.getElementById(' ').value
+				document.getElementsByTagName
+				document.getElementById(' ').style
+				document.querySelector(' ')
+				window.prompt()
+				window.alert()
+				var
+				for loop
+				if/else statement
+				while loop
+				switch statement
+				array
+				custom functions
+				addEventListener() to trigger all code
+				console.log()
+				operations, conditional operators and logical operators
+	    -->
+		<title>Melanie Garvey's JavaScript Game</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="styles.css" rel="stylesheet" media="screen">
+		<script src="modernizr.custom.05819.js"></script>
+	</head>
+	<body>
+		<div id="outerwrapper">
+			<header>
+				<h1>Melanie Garvey's JavaScript Game</h1>
+			</header>
+			<nav>
+			</nav>
+			<main>
+				<ol>
+					<li>
+						<p>JavaScript and Java are the same language.</p>
+						<ol>
+							<li><input type="radio" name="q1" id="a1">True</li>
+							<li><input type="radio" name="q1">False</li>
+						</ol>
+						<button id="b1">Reveal the correct answer</button>
+					</li>
+					<li>
+						<p>Please enter two numbers, select one of the following arithmetic operators in the drop down list, and click the 
+							"Calculate" button.</p>
+						<label for="n1">Num 1:</label>
+							<input type="number" id="n1"><br>
+						<label for="n2">Num 2:</label>
+							<input type="number" id="n2"><br>
+						<select>
+							<option id="add">+</option>
+							<option id="sub">-</option>
+							<option id="mult">*</option>
+							<option id="div">/</option>
+							<option id="mod">%</option>
+						</select>
+						<br>
+						<button id="b2">Calculate</button>
+						<p id="a2">The answer is</p>
+					</li>	
+					<li>
+						<p>Do you think JavaScript poses a security threat?</p>
+						<input type="text" id="t3"><br>
+						<button id="b3">Submit answer</button>
+					</li>
+					<li>
+						<p id="p4">Click the below button to change this text color to red.</p>
+						<button id="b4">Click to change text color</button>
+					</li>
+					<li>
+						<p class="p5">Click the below button to change this font to a larger size.</p>
+						<button id="b5">Click to change font size</button>
+					</li>
+					<li>
+						<p>Click the below button to see the while loop in action and count from 1 to 5.</p>
+						<button id="b6">Click to count 1-5</button>
+					</li>
+					<li>
+						<p>Can JavaScript only show or hide HTML elements? Or can it show and hide HTML elements? Please type your answer as 
+							show, hide or both in the below box.</p>
+						<input type="text" id="t7"><br>
+						<button id="b7">Submit answer</button>
+					</li>
+					<li>
+						<p>Click the below button to see what ROYGBIV stands for.</p>
+						<button id="b8">Reveal the correct answer</button>
+					</li>
+					<li>
+						<p>Please enter a number, select one of the following assignment operators in the drop down list, and click the 
+							"Calculate" button.</p>
+						<label for="n3">Num 3:</label>
+							<input type="number" id="n3"><br>
+						<select>
+							<option id="compoundAdd">+= 5</option>
+							<option id="compoundSub">-= 5</option>
+							<option id="compoundMult">*= 5</option>
+							<option id="compoundDiv">/= 5</option>
+							<option id="compoundMod">%= 5</option>
+						</select>
+						<br>
+						<button id="b9">Calculate</button>
+						<p id="a9">The answer is</p>
+					</li>
+					<li>
+						<p>Click the below button to see the while loop in action and count from 5 to 1.</p>
+						<button id="b10">Click to count 5-1</button>
+					</li>
+					<li>
+						<p>Please enter a number and click the below button to negate it.</p>
+						<label for="n4">Num 4:</label>
+							<input type="number" id="n4"><br>
+						<button id="b11">Negate</button>
+						<p id="a11">The answer is</p>
+					</li>
+					<li>
+						<p>Please check which documentation items you possess, click the below "Submit" button, and JavaScript
+							will determine if you (as a U.S. citizen) are eligible to travel abroad.</p>
+						<ol>
+							<li><input type="checkbox" name="q12" id="ppt">Passport</li>
+							<li><input type="checkbox" name="q12" id="bc">Birth Certificate</li>
+							<li><input type="checkbox" name="q12" id="dl">Driver's License</li>
+						</ol>
+						<button id="b12">Reveal the correct answer</button>
+					</li>
+					<li>
+						<p>Click the below button to see the while loop in action and count from 10 to 5.</p>
+						<button id="b13">Click to count 10-5</button>
+					</li>
+					<li>
+						<p>Please list the first and last name of the person that created JavaScript in the below box and 
+							click "Submit".  The answer is case sensitive.</p>
+						<input type="text" id="t14"><br>
+						<button id="b14">Submit</button>
+					</li>
+					<li>
+						<p>What was the original name of JavaScript?  Please enter your case sensitive answer below and click
+							"Submit".</p>
+						<input type="text" id="t15"><br>
+						<button id="b15">Submit</button>
+					</li>
+					<li>
+						<p>What other two languages in conjunction with JavaScript make up the three fundamental technologies 
+							of the World Wide Web's content production?  Please select your answer below and click "Submit".</p>
+						<ol>
+							<li><input type="radio" name="q16" id="a16">HTML & CSS</li>
+							<li><input type="radio" name="q16">HTML & Linux</li>
+							<li><input type="radio" name="q16">HTML & PHP</li>
+						</ol>
+						<button id="b16">Submit</button>
+					</li>
+					<li>
+						<p>"__________ programs are embedded within HTML to add dynamic interactivity to web documents."  
+							Please type your case sensitive answer below and click "Submit".</p>
+						<input type="text" id="t17"><br>
+						<button id="b17">Submit</button>
+					</li>
+				</ol>
+				<p>
+					<button id="done">Done</button>
+				</p>
+				<p>
+					<button id="exit">Exit</button>
+				</p>
+			</main>
+			<footer>
+				<p>Created @ JCCC WEB114 Final - Fall 2016</p>
+				<p>Johnson County Community College</p>
+			</footer>
+		</div>
+		<script>/*Melanie Garvey 10.24.16 Melanie Garvey's JavaScript Game JavaScript File*/
+
+username = window.prompt("What is your name?");
+window.alert(username + ", lets play a game!"); 
+document.write("Make sure to visit us again in the future for more JavaScript quizzes on a PC near you!")
+
+// This code is for question 1.
+function question1() {
+	if (document.getElementById("a1").checked) {
+		window.alert("You have selected the correct answer!");
+	} else {
+		window.alert("JavaScript and Java are separate languages.");
+	}
+}
+document.getElementById("b1").addEventListener("click", question1, false);
+
+function question2() {
+	var num1 = Number(document.getElementById("n1").value);
+	var num2 = Number(document.getElementById("n2").value);
+	if (document.getElementById("add").selected) {
+		var add = (num1 + num2);
+		document.getElementById("a2").innerHTML = username + ", the answer is: " + add;
+	} else if (document.getElementById("sub").selected) {
+		var sub = (num1 - num2);
+		document.getElementById("a2").innerHTML = username + ", the answer is: " + sub;
+	} else if (document.getElementById("mult").selected) {
+		var mult = (num1 * num2);
+		document.getElementById("a2").innerHTML = username + ", the answer is: " + mult;
+	} else if (document.getElementById("div").selected) {
+		var div = (num1 / num2);
+		document.getElementById("a2").innerHTML = username + ", the answer is: " + div;
+	} else if (document.getElementById("mod").selected) {
+		var mod = (num1 % num2);
+		document.getElementById("a2").innerHTML = username + ", the answer is: " + mod;
+	}
+}
+document.getElementById("b2").addEventListener("click", question2, false);
+
+//This code is for question 3.
+function question3() {
+	var t3 = document.getElementById("t3").value;
+	if (t3.length == 0) {
+		alert("Please enter an answer in the text box.");
+	} else if (t3.length != 0) {
+		alert("Everyone has their opinion!");
+	}
+	console.log(t3);
+}
+document.getElementById("b3").addEventListener("click", question3, false);
+
+//This code is for question 4.
+function question4() {
+	var p4color = document.getElementById("p4");
+	p4color.style.color = "red";
+}	
+document.getElementById("b4").addEventListener("click", question4, false);
+
+//This code is for question 5.
+function question5() {
+	var p5fontSize = document.querySelectorAll(".p5");
+	p5fontSize[0].style.fontSize = "2em";
+}
+document.getElementById("b5").addEventListener("click", question5, false);
+
+//This code is for question 6.
+function question6() {
+	var count = 1;
+	while (count <= 5) {
+		window.alert(count);
+		count++;
+	}
+}
+document.getElementById("b6").addEventListener("click", question6, false);
+
+// This code is for question 7.
+function question7() {
+	var text7 = document.getElementById("t7").value;
+	switch (text7) {
+		case "show":
+			alert("Yes but it can also hide HTML elements.");
+			break;
+		case "hide":
+			alert("Yes but it can also show HTML elements.");
+			break;
+		case "both":
+			alert("Correct!");
+			break;
+	}
+}
+document.getElementById("b7").addEventListener("click", question7, false);
+
+// This code is for question 8.
+function question8() {
+	var text8 = ["red", " orange", " yellow", " green", " blue", " indigo", " violet"];
+	for (var i = 0; i < 1; i++) {
+		window.alert(text8);
+	}
+}
+document.getElementById("b8").addEventListener("click", question8, false);
+
+// This code is for question 9.
+function question9() {
+	var num3 = Number(document.getElementById("n3").value);
+	if (document.getElementById("compoundAdd").selected) {
+		var add = (num3 += 5);
+		document.getElementById("a9").innerHTML = username + ", the answer is: " + add;
+	} else if (document.getElementById("compoundSub").selected) {
+		var sub = (num3 -= 5);
+		document.getElementById("a9").innerHTML = username + ", the answer is: " + sub;
+	} else if (document.getElementById("compoundMult").selected) {
+		var mult = (num3 *= 5);
+		document.getElementById("a9").innerHTML = username + ", the answer is: " + mult;
+	} else if (document.getElementById("compoundDiv").selected) {
+		var div = (num3 /= 5);
+		document.getElementById("a9").innerHTML = username + ", the answer is: " + div;
+	} else if (document.getElementById("compoundMod").selected) {
+		var mod = (num3 %= 5);
+		document.getElementById("a9").innerHTML = username + ", the answer is: " + mod;
+	}
+}
+document.getElementById("b9").addEventListener("click", question9, false);
+
+//This code is for question 10.
+function question10() {
+	var count = 5;
+	while (count >= 1) {
+		window.alert(count);
+		count--;
+	}
+}
+document.getElementById("b10").addEventListener("click", question10, false);
+
+//This code is for question 11.
+function question11() {
+	var num4 = -Number(document.getElementById("n4").value);
+	document.getElementById("a11").innerHTML = username + ", the answer is: " + num4;
+}
+document.getElementById("b11").addEventListener("click", question11, false);
+
+//This code is for question 12.
+function question12() {
+	var ppt = document.getElementById("ppt");
+	var bc = document.getElementById("bc");
+	var dl = document.getElementById("dl");
+	if ((ppt.checked || bc.checked && dl.checked) || (ppt.checked && bc.checked && dl.checked)) {
+		window.alert("You have the proper documents to travel abroad.");
+	} else {
+		window.alert("You do not have the proper documents to travel abroad.");
+	}	
+}
+document.getElementById("b12").addEventListener("click", question12, false);
+
+//This code is for question 13.
+function question13() {
+	var count = 10;
+	while (count > 4) {
+		window.alert(count);
+		count--;
+	}
+}
+document.getElementById("b13").addEventListener("click", question13, false);
+
+//This code is for question 14.
+function question14() {
+	var t14 = document.getElementById("t14").value;
+	if (t14 === "Brendan Eich") {
+		alert("You are correct.");
+	} else if (t14 !== "Brendan Eich") {
+		alert("Incorrect. Brendan Eich created JavaScript.");
+	}
+	console.log(t14);
+}
+document.getElementById("b14").addEventListener("click", question14, false);
+
+//This code is for question 15.
+function question15() {
+	var t15 = document.getElementById("t15").value;
+	if (!(t15 == "Mocha")) {
+		alert("Incorrect. Mocha was the original name of JavaScript.");
+	} else if (t15 == "Mocha") {
+		alert("Correct.");
+	}
+	console.log(t15);
+}
+document.getElementById("b15").addEventListener("click", question15, false);
+
+//This code is for question 16.
+function question16() {
+	var html = "HTML & ";
+	var css = "CSS.";
+	if (document.getElementById("a16").checked) {
+		window.alert("You have selected the correct answer! " + (html + css));
+	} else {
+		window.alert("Incorrect. Try " + (html + css));
+	}	
+}
+document.getElementById("b16").addEventListener("click", question16, false);
+
+//This code is for question 17.
+function question17() {
+	var t17 = document.getElementById("t17").value;
+	if (t17 == "JavaScript") {
+		alert("Correct. " + (t17 += " programs are embedded within HTML to add dynamic interactivity to web documents."));
+	} else if (!(t17 == "JavaScript")) {
+		alert("Incorrect. JavaScript programs are embedded within HTML to add dynamic interactivity to web documents.");
+	}
+	console.log(t17);
+}
+document.getElementById("b17").addEventListener("click", question17, false);
+
+//This code is to ask users if they are done with the quiz.
+function done() {
+	var list = document.getElementsByTagName("li");
+	for (var i = 0; i < list.length; i++) {
+		list[i].style.fontStyle = "italic";
+	}
+}
+document.getElementById("done").addEventListener("click", done, false);
+
+function exit() {
+	var congrats = "Congrats on finishing the JavaScript game!";
+	document.write(congrats);
+	document.write("<p>Have a nice day!</p>");
+}
+document.getElementById("exit").addEventListener("click", exit, false);
+</script>
+	</body>
+	</html>
