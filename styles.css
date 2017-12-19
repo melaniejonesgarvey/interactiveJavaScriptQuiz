@@ -1,0 +1,33 @@
+/*
+ *	Author: Melanie Garvey
+ *	Date: 10/20/16
+ *	Project Name: Interactive JavaScript Quiz
+*/
+
+body {
+	background-color: #fff;
+	
+}
+
+#outerwrapper {
+	width: 90%;
+	margin: 0 auto 0 auto;
+	background-color: #f4edef;
+	color: #994c64;
+}
+
+@media only screen and (max-width: 64em) {
+	#outerwrapper {
+		width: 100%;
+		background-color: #c193a2;
+		color: #f4edef;
+	}
+}
+
+@media only screen and (max-width: 37.5em) {
+	#outerwrapper {
+		width: 100%;
+		background-color: #994c64;
+		color: #f4edef;
+	}
+}
